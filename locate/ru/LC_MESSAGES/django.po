@@ -1,0 +1,26 @@
+msgid "This password is too short. It must contain at least 8 characters."
+msgstr "Этот пароль слишком короткий. Он должен содержать не менее 8 символов."
+
+msgid "This password is too common."
+msgstr "Этот пароль слишком распространен."
+
+msgid "This password is entirely numeric."
+msgstr "Этот пароль состоит только из цифр."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Ваш пароль не должен быть слишком похож на вашу личную информацию."
+
+msgid "Your password must contain at least 8 characters."
+msgstr "Ваш пароль должен содержать не менее 8 символов."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "Ваш пароль не должен быть часто используемым паролем."
+
+msgid "Enter the same password as before, for verification."
+msgstr "Введите тот же пароль, что и раньше, для проверки."
+
+msgid "Enter a valid email address."
+msgstr "Введите действительный адрес электронной почты."
+
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr "Обязательно. Не более 150 символов. Только буквы, цифры и @/./+/-/_."

@@ -30,11 +30,16 @@ class Notification(models.Model):
         ]
     )
 
-class ProductCard(models.Model):
-    title = models.CharField('Название', max_length=60, null= False)
-    image = models.ImageField('Изображение', upload_to='img/%y-%m-%d')#нужно для картинок python -m pip install Pillow
-    price = models.FloatField('Цена')
-    slug = models.SlugField(max_length=200, unique=True, null=True)
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    authors = models.ManyToManyField(Author, related_name='books')
 
     def __str__(self):
         return self.title
