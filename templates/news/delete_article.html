@@ -1,0 +1,11 @@
+{% extends 'layout/layout.html' %}
+
+{% block title %}Статья удалена{% endblock %}
+
+{% block contents %}
+<div class="container mt-5 mb-5">
+    <h2 class="text-center">Статья удалена</h2>
+    <p>Вы удалили статью под названием "{{ article.title }}".</p>
+    <a href="{% url 'article_list' %}" class="btn btn-primary">Вернуться к списку статей</a>
+</div>
+{% endblock %}

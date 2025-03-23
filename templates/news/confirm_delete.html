@@ -1,0 +1,15 @@
+{% extends 'layout/layout.html' %}
+
+{% block title %}Удаление статьи{% endblock %}
+
+{% block contents %}
+<div class="container mt-5 mb-5">
+    <h2 class="text-center">Удаление статьи</h2>
+    <p>Вы уверены, что хотите удалить статью под названием "{{ article.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Удалить</button>
+        <a href="{% url 'article_list' %}" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock %}

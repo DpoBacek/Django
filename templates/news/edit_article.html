@@ -1,0 +1,63 @@
+{% extends 'layout/layout.html' %}
+
+{% block title %}Редактирование статьи{% endblock %}
+
+{% block contents %}
+<div class="container mt-5 mb-5">
+    <h2 class="text-center">Редактирование статьи</h2>
+    <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            {{ form.title.label_tag }}
+            {{ form.title }}
+            {% if form.title.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ form.title.errors }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.text.label_tag }}
+            {{ form.text }}
+            {% if form.text.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ form.text.errors }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.image.label_tag }}
+            {{ form.image }}
+            {% if form.image.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ form.image.errors }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.mainTag.label_tag }}
+            {{ form.mainTag }}
+            {% if form.mainTag.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ form.mainTag.errors }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.tags.label_tag }}
+            {{ form.tags }}
+            {% if form.tags.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ form.tags.errors }}
+                </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+</div>
+{% endblock %}

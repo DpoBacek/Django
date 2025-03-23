@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Notification, Author, Book
+from .models import *
 
-admin.site.register(Notification)
-admin.site.register(Author)
-admin.site.register(Book)
+admin.site.register(User)
+admin.site.register(Tag)
+admin.site.register(Article)

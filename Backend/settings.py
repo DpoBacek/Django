@@ -12,22 +12,27 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
-import environ
+from dotenv import load_dotenv
 
-# Инициализация
-env = environ.Env(
-    DEBUG=(bool, False)
-)
+# Загрузка переменных окружения из файла .env
+load_dotenv()
 
-# Чтение файла .env
-environ.Env.read_env()
+# Базовая директория проекта
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Использование переменных окружения
-SECRET_KEY = env('SECRET_KEY')
-DEBUG = env('DEBUG')
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+# Получение переменной SECRET_KEY из окружения
+SECRET_KEY = os.getenv('SECRET_KEY')
+
+# Другие настройки...
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+
+# Настройки базы данных
 DATABASES = {
-    'default': env.db(),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
