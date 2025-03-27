@@ -58,7 +58,7 @@ class Article(models.Model):
     published_at = models.DateTimeField(verbose_name='Дата публикации', auto_now_add=True)
     image = models.ImageField(null=True, blank=True, verbose_name='Изображение')
     mainTag = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='mainTag', verbose_name='Основной тэг')
-    tags = models.ManyToManyField(Tag, related_name='article')
+    tags = models.ManyToManyField(Tag, related_name='article',verbose_name='Тэги')
     author = models.IntegerField(null=True)
 
 

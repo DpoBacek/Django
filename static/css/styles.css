@@ -10,6 +10,19 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ .btn-group-toggle .btn {
+  width: calc(33.333% - 10px); /* Три кнопки в строке с отступами */
+  margin: 5px;
+  text-align: center;
+}
+
+.btn-group-toggle .btn input[type="checkbox"] {
+  display: none; /* Скрыть стандартный чекбокс */
+}
+
+
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
