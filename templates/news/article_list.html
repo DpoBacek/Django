@@ -23,7 +23,7 @@
                         <span class="badge bg-secondary">{{ tag.name }}</span>
                         {% endfor %}
                     </div>
-                    {% if article.author == user.id %}
+                    {% if article.author == user.id or user.is_superuser%}
                     <div class="mt-3">
                         <a href="{% url 'edit_article' article.id %}" class="btn btn-warning">Редактировать</a>
                         <a href="{% url 'delete_article' article.id %}" class="btn btn-danger">Удалить</a>
